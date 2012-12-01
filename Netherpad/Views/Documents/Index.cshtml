@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home</h2>
+
+@using (Html.BeginForm("Create", "Documents"))
+{
+	<p>Name: @Html.TextBox("Name")</p>
+	<input type="submit" value="Create New Document" />
+}
+

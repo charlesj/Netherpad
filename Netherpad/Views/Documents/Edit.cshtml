@@ -1,0 +1,32 @@
+﻿@model Netherpad.ViewModels.EditDocumentViewModel
+
+@{
+	ViewBag.Title = @Model.Document.Name;
+}
+
+
+<div class="row">
+	<div class="span9">
+		<h2>@Model.Document.Name</h2>
+		@using (Html.BeginForm("Save", "Documents", new { identifier = Model.Document.Identifier }))
+		{
+			@Html.TextArea("Content", Model.Document.Content, new {style="width: 100%; height: 300px;"})
+			<p><input type="submit" value="Save Changed" /></p>
+		}
+
+		<h2>Preview</h2>
+
+		@Model.Document.Content
+	</div>
+	<div class="span3">
+		<h2>Versions</h2>
+		<ul>
+		@foreach (var version in @Model.Versions)
+		{
+			<li>@version.Version</li>
+		}
+		</ul>
+	</div>
+</div>
+
+
