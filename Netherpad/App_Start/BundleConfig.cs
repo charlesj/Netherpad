@@ -23,6 +23,17 @@ namespace Netherpad
 			bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
 						"~/Scripts/modernizr-*"));
 
+			bundles.Add(new ScriptBundle("~/bundles/signalr").Include(
+					"~/Scripts/jquery.signalR*"));
+
+			bundles.Add(new ScriptBundle("~/bundles/share").Include(
+						"~/Scripts/share/share.js",
+						"~/Scripts/share/diff_match_patch.js",
+						"~/Scripts/share/editor.js",
+						"~/Scripts/share/json2.js"
+
+						));
+
 			bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
 			bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
@@ -39,6 +50,7 @@ namespace Netherpad
 						"~/Content/themes/base/jquery.ui.progressbar.css",
 						"~/Content/themes/base/jquery.ui.theme.css"));
 
+			
 
 		}
 	}
